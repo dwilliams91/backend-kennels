@@ -22,7 +22,9 @@ export const LocationList = () => {
                 {
                     locations.map(location => {
                         location.employees = employees.filter(e => e.locationId === location.id)
-                        location.animals = animals.filter(a => a.locationId === location.id)
+                        
+                        location.animals = animals.filter(a => {
+                            return a.location_id === location.id})
 
                         return <article key={`location--${location.id}`} className="card location" style={{ width: `18rem` }}>
                             <section className="card-body">
